@@ -1,0 +1,35 @@
+\usepackage[most]{tcolorbox}
+
+% packages for large tables
+\usepackage{booktabs}
+\usepackage{bm, amsmath}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{hhline}
+\usepackage{xcolor}
+\usepackage{longtable}
+\usepackage{tabu}
+\usepackage{adjustbox}
+\usepackage{threeparttable}
+\usepackage{makecell}
+
+% images
+\def\greentick{\includegraphics[scale=0.05]{figures/green_tick.png}}
+\def\redcross{\includegraphics[scale=0.05]{figures/red_cross.png}}
+
+% boxes
+\newtcolorbox{blackbox}[1]{colback=white, colframe=black, coltext=black, boxsep=1.5pt, arc=4pt, before=\centering, title=#1}
+\newenvironment{cols}[1][]{}{} \newenvironment{col}[1]{\begin{minipage}{#1}\ignorespaces}{\end{minipage} \ifhmode\unskip\fi
+    \aftergroup\useignorespacesandallpars} \def\useignorespacesandallpars#1\ignorespaces\fi{#1\fi\ignorespacesandallpars} \makeatletter  
+    \def\ignorespacesandallpars{\@ifnextchar\par {\expandafter\ignorespacesandallpars\@gobble} {} } \makeatother
+    
+% To name R packages
+\newcommand{\strong}[1]{\texorpdfstring%
+{{\normalfont\fontseries{b}\selectfont #1}}%
+{#1}}
+\let\pkg=\strong
+\newcommand{\CRANpkg}[1]{\href{https://CRAN.R-project.org/package=#1}{\pkg{#1}}}
+\newcommand{\BIOpkg}[1]{\href{https://www.bioconductor.org/packages/release/bioc/html/#1.html}{\pkg{#1}}}

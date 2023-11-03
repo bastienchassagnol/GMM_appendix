@@ -4,6 +4,7 @@
 
 # Session Data files
 .RData
+*.Rproj
 .RDataTmp
 
 # User-specific files
@@ -47,3 +48,6 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# Irrelevant log files
+*.log
